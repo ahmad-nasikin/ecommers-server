@@ -38,5 +38,16 @@ module.exports = {
         .catch(err => {
             res.send(err)
         })
+    },
+    delete: (req, res) => {
+        models.remove({
+            _id: req.params.id
+        })
+        .then(result => {
+            res.send(result)
+        })
+        .catch(err => {
+            res.send(err)
+        })
     }
 }
